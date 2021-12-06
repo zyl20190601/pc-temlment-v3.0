@@ -25,7 +25,7 @@ module.exports = {
       sass: {
         // 全局scss
         // prependData
-        data: `@import "@/assets/scss/common.scss";`,
+        data: `@import "@/assets/scss/common.scss";@import "@/assets/scss/variables.scss";`,
         sourceMap: isDev,
       },
       postcss: {
