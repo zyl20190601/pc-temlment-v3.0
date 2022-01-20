@@ -35,5 +35,8 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "vue/no-v-model-argument": "off",
+  },
+  "globals": {
+    "ObjectType": "writable",
   }
 }

@@ -21,9 +21,16 @@
 # Git 的常用方法
 
 | 指令 | 描述 |
+| git remote rm origin | 删除远程地址 |
+| git remote add origin URL | 添加远程地址 |
+| git config user.name | 查看用户名 |
+| git config user.email | 查看邮箱地址 |
+| git config user.name "xxx" | 修改当前用户名 --global 为全局|
+| git config user.email "xxx" | 修改当前邮箱地址 |
+| git config user.password "xxx"| 修改当前当前密码 |
 | git stash | 将当前未提交的工作存入 Git 工作栈中, 时机成熟时候应用回来 |
 | git stash pop | 放开暂存 |
-| git cherry-pick \$id | 拉取单条提交记录的代码 |
+| git cherry-pick $id | 拉取单条提交记录的代码 |
 | git remote - v | 查看远程仓库 |
 | git remote add origin--url | 推到远程上添加源 |
 | git branch | 查看本地分支 |

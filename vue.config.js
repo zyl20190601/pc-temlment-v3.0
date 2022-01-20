@@ -4,14 +4,21 @@
 const { isDev, notDev, isPro } = require('./src/config/env.ts');
 const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+const { name } = require('./package.json')
+
 const path = require('path')
 const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
-  publicPath: './',
-  lintOnSave: true, // 关闭eslint
+  // 基本路径
+  publicPath: '/' + name,
+  // 输出文件目录
+  outputDir: name,
+  // 关闭eslint
+  lintOnSave: true,
   // vue-loader 配置项
   productionSourceMap: false, // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建
   css: {
