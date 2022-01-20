@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/dist
+/pc-temlemt-v3
 
 
 # local env files
