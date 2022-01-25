@@ -1,30 +1,21 @@
-# PC-temlemt-v3
+# 提示
 
-## Project setup
+1. 使用时将 package.json 的 name 换成当前项目的名称
+2. 在.gitignore 文件添加打包后的目录名
+3. 下载安装包只能使用 yarn；（安装 yarn：npm install -g yarn；查看版本：yarn --version；）
 
-```
-npm install
-```
+# 项目插件版本：
 
-### Compiles and hot-reloads for development
+1. vue@3.0.0、vue-router@4.0.0、vuex@4.0.0;
+2. element-plus@1.3.0-beta.5；适配vue@3.0.0;
+3. node 版本 v14.15.4;
+4. axios@0.21.1;前后端交互 api;
 
-```
-npm run serve
-```
+## 文件的命名规范和样式的命名规范：
 
-### Compiles and minifies for production
+文件目录页面命名规范：文件:DynamiComponent.ts -> dynamic-component.ts; 目录:FormGroup -> form-group; 页面:Home.vue -> Home.vue;
 
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
+### vue cli 配置
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
