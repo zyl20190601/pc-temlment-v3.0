@@ -4,16 +4,15 @@ import router from './router'
 import { store, key } from './store'
 import mixin from '@/mixin'
 
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import naive from 'naive-ui'
 
 // 重置样式
 import '@/assets/scss/reset.scss'
-// 重置 饿了么样式
-import '@/assets/scss/reset-element-ui.scss'
+// 重置 naive-ui 么样式
+import '@/assets/scss/reset-naive-ui.scss'
 
 createApp(App)
-  .use(ElementPlus)
+  .use(naive)
   .use(mixin)
   .use(store, key)
   .use(router)
