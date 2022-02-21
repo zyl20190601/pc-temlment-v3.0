@@ -76,7 +76,7 @@ module.exports = {
     //   vue: 'Vue',
     //   'vue-router': 'VueRouter',
     //   axios: 'axios',
-    //   'vant-ui': 'Element'
+    //   'naive-ui': 'naive-ui'
     // })
 
     // 配置引用路径
@@ -142,13 +142,24 @@ module.exports = {
                   path = path.replace(/\\/g, '/')
                   let isNeed = path &&
                     /node_modules/.test(path) &&
-                    /node_modules\/(?!vant)/.test(path) &&
+                    /node_modules\/(?!naive-ui)/.test(path) &&
                     /node_modules\/(?!axios)/.test(path) &&
                     /node_modules\/(?!@vue)/.test(path)
                   return isNeed
                 },
                 name: 'chunk-vendors',
                 priority: 10, // 优先级配置，优先匹配优先级更高的规则，不设置默认为0
+                enforce: true
+              },
+              'naive-ui': {
+                test (module) {
+                  let path = module.resource
+                  if (!path) return false
+                  path = path.replace(/\\/g, '/')
+                  return path && /node_modules\/naive-ui/.test(path)
+                },
+                name: 'chunk-naive-ui',
+                priority: 9,
                 enforce: true
               },
               axios: {
