@@ -7,7 +7,7 @@
 # 项目插件版本：
 
 1. vue@3.0.0、vue-router@4.0.0、vuex@4.0.0;
-2. element-plus@1.3.0-beta.5；适配vue@3.0.0;
+2. naive-ui@2.24.6；适配vue@3.0.0;
 3. node 版本 v14.15.4;
 4. axios@0.21.1;前后端交互 api;
 
