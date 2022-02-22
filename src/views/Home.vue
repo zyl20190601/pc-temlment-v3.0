@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useStore } from '@/hooks/useStore'
+import { useStore } from '@/hooks/use-store'
 
 export default defineComponent({
   name: 'Home',

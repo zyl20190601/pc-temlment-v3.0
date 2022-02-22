@@ -11,7 +11,7 @@
 
 ```js
 import { defineComponent, toRefs } from 'vue'
-import { useGetters, useState } from "@/hooks/useStoreMap";
+import { useGetters, useState } from "@/hooks/use-store-map";
 
 <script lang="ts">
 

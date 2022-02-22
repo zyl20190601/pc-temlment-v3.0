@@ -7,7 +7,7 @@
 
 ```js
 import { defineComponent, toRefs } from 'vue'
-import { useStore } from '@/hooks/useStore'
+import { useStore } from '@/hooks/use-store'
 
 <script lang="ts">
 
