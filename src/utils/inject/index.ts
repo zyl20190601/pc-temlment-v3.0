@@ -59,13 +59,25 @@ Object.defineProperty(String.prototype, 'isIdCard', {
 });
 
 /**
+ * 数字格式化, 保留整正数
+ */
+Object.defineProperty(String.prototype, 'floatFormaterJust', {
+  writable: true,
+  enumerable: false, // 不可枚举
+  configurable: true,
+  value: function () {
+    return this.replace(/[^\d]/g, '')
+  },
+})
+
+/**
  * 数字格式化, 保留两位小数点, 且大于0, 键盘事件输入控制
  */
 Object.defineProperty(String.prototype, 'floatFormater', {
   writable: true,
   enumerable: false, // 不可枚举
   configurable: true,
-  value: function () {
+  value: function (maxValue = Number.MAX_SAFE_INTEGER, howmMany = 2) {
     let num = this.Trim()
     num = num.replace(/^\./g, '')
     num = num.replace(/[^\d.]/g, '') //清除数字和‘.’以外的字符
@@ -74,11 +86,20 @@ Object.defineProperty(String.prototype, 'floatFormater', {
       .replace('.', '$#$')
       .replace(/\./g, '')
       .replace('$#$', '.')
-    // eslint-disable-next-line no-useless-escape
-    num = num.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3') //只能输入两个小数
+    if (howmMany == 3) {
+      // eslint-disable-next-line no-useless-escape
+      num = num.replace(/^(\-)*(\d+)\.(\d\d\d).*$/, '$1$2.$3') //只能输入三个小数
+    } else {
+      // eslint-disable-next-line no-useless-escape
+      num = num.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3') //只能输入两个小数
+    }
     if (num.indexOf('.') < 0 && num != '') {
       //以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
       num = String(parseFloat(num))
+    }
+
+    if (Number(num) > Number(maxValue)) {
+      return Number(maxValue)
     }
     return num
   }

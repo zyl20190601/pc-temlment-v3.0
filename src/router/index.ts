@@ -1,6 +1,18 @@
-import { createRouter, createWebHashHistory, RouteLocationNormalized } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
+import { beforeRouter } from './router-config'
 
-import routes from './base'
+import Home from '../views/Home.vue'
+
+import modulesRoutes from './get-modules-routes'
+
+const routes: Array<RouteRecordRaw> = [
+  ...modulesRoutes,
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -18,13 +30,6 @@ const router = createRouter({
   }
 })
 
-router.beforeEach(async (to: RouteLocationNormalized, from: RouteLocationNormalized, next) => {
-  next()
-})
-
-// router.afterEach((to, from) => {
-//   console.log();
-// });
-
+beforeRouter(router)
 
 export default router
