@@ -1,7 +1,7 @@
 import { prefix } from '@/config'
 import { request } from '@/server/axios'
 
-import { IaddIntentionParams, TaddIntentionRes } from './user'
+import { IaddIntentionParams, TaddIntentionRes } from './common'
 
 // POST
 export const addIntentionApi = (data: IaddIntentionParams): TaddIntentionRes => request({

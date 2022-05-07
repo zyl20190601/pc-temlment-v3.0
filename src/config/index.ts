@@ -16,6 +16,9 @@ const QUERY_INFO_CONFIG = {
   charset: 'UTF-8',
 }
 
+// api 公共前缀
+const prefix = ''
+
 // MD5 密钥
 const key = ''
 
@@ -27,6 +30,7 @@ export {
   isTest,
   notTest,
   isPro,
-  notPro
+  notPro,
+  prefix
 }
 
