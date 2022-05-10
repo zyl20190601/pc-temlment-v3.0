@@ -161,7 +161,7 @@ export function createWaterMark(
  * @param {string} fileName // 图片名字
  * @return {*}
  */
-export function getImgSrc(fileName: string): any {
+export function getImgSrc(fileName: string): string {
   const modulesFiles = require.context('../../assets/images', true, /\.png|.jpeg|.jpg$/)
   const modulesFilesNames = modulesFiles.keys()
   if (modulesFilesNames.includes(fileName)) return 'error.png'

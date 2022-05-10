@@ -17,3 +17,10 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.home {
+  height: 100px;
+  width: 100px;
+}
+</style>

@@ -22,10 +22,10 @@
 
 /**
  * 引用图片，自动获取图片的 background-size
- * @param  {string} $img-url [图片的路径]
+ * @param  {string} $img-url [图片的路径] @include bg('logo.png')
  * @param  {string} $img-name [图片的名字]
  */
-@mixin bg($img-name, $img-url: "../../assets/images/") {
+@mixin bg($img-name, $img-url: "~@/assets/images/") {
   background-image: url($img-url+$img-name);
   background-repeat: no-repeat;
   background-position: center center;

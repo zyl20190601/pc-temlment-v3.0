@@ -2,8 +2,7 @@
 $css-prefix: yyds;
 
 // 图片路径
-$img-url: "../../assets/images/";
-$img-url-pageCom: "../../../assets/images/";
+$img-url: "~@/assets/images/";
 
 //内容最小宽度
 $cont-width: 1360px;
