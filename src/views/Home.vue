@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="@/assets/image/logo.png" />
+    <img alt="Vue logo" :src="getImgSrc('logo')" />
   </div>
 </template>
 
