@@ -4,18 +4,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useStore } from '@/hooks/use-store'
 
-export default defineComponent({
-  name: 'Home',
-  components: {},
-  setup() {
-    const store = useStore()
-    store.commit('user/MU_SET_USER_INFO')
-  }
-})
+const store = useStore()
+store.commit('user/MU_SET_USER_INFO')
+
 </script>
 
 <style lang="scss" scoped>

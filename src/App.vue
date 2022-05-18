@@ -11,24 +11,18 @@
   ></router-view>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, provide, nextTick } from 'vue'
-export default defineComponent({
-  setup() {
-    const isRouterAlive = ref(true)
-    provide('reload', reload)
+<script lang="ts" setup>
+import { ref, provide, nextTick } from 'vue';
 
-    async function reload() {
-      isRouterAlive.value = false
-      await nextTick()
-      isRouterAlive.value = true
-    }
+const isRouterAlive = ref(true);
+provide('reload', reload);
 
-    return {
-      isRouterAlive
-    }
-  }
-})
+async function reload() {
+  isRouterAlive.value = false;
+  await nextTick();
+  isRouterAlive.value = true;
+}
+
 </script>
 
 <style lang="scss" scoped>
