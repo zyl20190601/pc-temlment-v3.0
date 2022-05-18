@@ -6,7 +6,6 @@
 
 <script lang="ts" setup>
 import { useStore } from '@/hooks/use-store'
-import { getImgSrc } from '@/utils/tools';
 
 defineOptions({
   name:'Home',
