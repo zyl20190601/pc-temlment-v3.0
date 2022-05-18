@@ -5,6 +5,10 @@ const { isDev, notDev, isPro } = require('./src/config/env.ts');
 const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+
 const { name } = require('./package.json')
 
 const path = require('path')
@@ -76,7 +80,7 @@ module.exports = {
     //   vue: 'Vue',
     //   'vue-router': 'VueRouter',
     //   axios: 'axios',
-    //   'naive-ui': 'naive-ui'
+    //   'element-plus': 'element-plus'
     // })
 
     // 配置引用路径
@@ -107,6 +111,13 @@ module.exports = {
     if (notDev) {
       return {
         plugins: [
+          // 按需导入 饿了么 组件
+          AutoImport({
+            resolvers: [ElementPlusResolver()],
+          }),
+          Components({
+            resolvers: [ElementPlusResolver()],
+          }),
           // 代码压缩
           new UglifyJsPlugin({
             sourceMap: false,
@@ -142,7 +153,7 @@ module.exports = {
                   path = path.replace(/\\/g, '/')
                   let isNeed = path &&
                     /node_modules/.test(path) &&
-                    /node_modules\/(?!naive-ui)/.test(path) &&
+                    /node_modules\/(?!element-plus)/.test(path) &&
                     /node_modules\/(?!axios)/.test(path) &&
                     /node_modules\/(?!@vue)/.test(path)
                   return isNeed
@@ -151,14 +162,14 @@ module.exports = {
                 priority: 10, // 优先级配置，优先匹配优先级更高的规则，不设置默认为0
                 enforce: true
               },
-              'naive-ui': {
+              'element-plus': {
                 test (module) {
                   let path = module.resource
                   if (!path) return false
                   path = path.replace(/\\/g, '/')
-                  return path && /node_modules\/naive-ui/.test(path)
+                  return path && /node_modules\/element-plus/.test(path)
                 },
-                name: 'chunk-naive-ui',
+                name: 'element-plus-ui',
                 priority: 9,
                 enforce: true
               },
