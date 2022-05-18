@@ -105,6 +105,18 @@ module.exports = {
   },
 
   configureWebpack: (config) => {
+    let plugins = [
+      // 注册组件名字
+      DefineOptions(),
+      // 按需导入 饿了么 组件
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ]
+
     if (isPro) {
       // 生产环境去掉 console
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
@@ -114,15 +126,7 @@ module.exports = {
     if (notDev) {
       return {
         plugins: [
-          // 注册组件名字
-          DefineOptions(),
-          // 按需导入 饿了么 组件
-          AutoImport({
-            resolvers: [ElementPlusResolver()],
-          }),
-          Components({
-            resolvers: [ElementPlusResolver()],
-          }),
+          ...plugins,
           // 代码压缩
           new UglifyJsPlugin({
             sourceMap: false,
@@ -138,8 +142,7 @@ module.exports = {
             threshold: 10240, // 只处理比这个值大的资源。按字节计算
             minRatio: 0.8, // 只有压缩率比这个值小的资源才会被处理
             deleteOriginalAssets: false
-          })
-        ],
+          })],
         optimization: {
           splitChunks: {
             minSize: 30,
@@ -220,6 +223,11 @@ module.exports = {
           }
         }
       }
+    }
+
+    // 开发环境
+    return {
+      plugins
     }
   },
   parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
