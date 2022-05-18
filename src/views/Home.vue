@@ -6,6 +6,11 @@
 
 <script lang="ts" setup>
 import { useStore } from '@/hooks/use-store'
+import { getImgSrc } from '@/utils/tools';
+
+defineOptions({
+  name:'Home',
+})
 
 const store = useStore()
 store.commit('user/MU_SET_USER_INFO')

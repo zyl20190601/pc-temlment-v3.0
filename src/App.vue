@@ -14,6 +14,10 @@
 <script lang="ts" setup>
 import { ref, provide, nextTick } from 'vue';
 
+defineOptions({
+  name:'App',
+})
+
 const isRouterAlive = ref(true);
 provide('reload', reload);
 

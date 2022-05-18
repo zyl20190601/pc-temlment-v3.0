@@ -5,8 +5,11 @@ import { store, key } from './store'
 import mixin from '@/mixin'
 import { getImgSrc } from '_ut/tools/index'
 
-// 重置样式及公共样式
-import '@/assets/scss/index.scss'
+// 重置样式
+import '@/assets/scss/reset.scss'
+
+// 重置饿了么样式
+import '@/assets/scss/reset-element-plus-ui.scss'
 
 const app = createApp(App)
 

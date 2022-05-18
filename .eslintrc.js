@@ -38,5 +38,6 @@ module.exports = {
   },
   "globals": {
     "ObjectType": "writable",
+    "defineOptions": "writable",
   }
 }
