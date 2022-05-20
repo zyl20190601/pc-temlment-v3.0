@@ -5,9 +5,10 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CityLinkage: typeof import('./src/components/city-linkage/index.vue')['default']
+    FormDialog: typeof import('./src/components/form-dialog/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Test: typeof import('./src/components/test.vue')['default']
   }
 }
 

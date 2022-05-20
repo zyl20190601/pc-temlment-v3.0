@@ -9,6 +9,7 @@ import { getImgSrc } from '_ut/tools/index'
 import '@/assets/scss/reset.scss'
 
 // 重置饿了么样式
+import 'element-plus/dist/index.css'
 import '@/assets/scss/reset-element-plus-ui.scss'
 
 const app = createApp(App)
