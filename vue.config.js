@@ -8,9 +8,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
-const DefineOptions = require('unplugin-vue-define-options/webpack')
 
-// import DefineOptions from 'unplugin-vue-define-options/webpack';
+const DefineOptions = require('unplugin-vue-define-options/webpack')
 
 const { name } = require('./package.json')
 
