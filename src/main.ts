@@ -6,10 +6,10 @@ import mixin from '@/mixin'
 import { getImgSrc } from '_ut/tools/index'
 
 // 重置样式
+import 'element-plus/dist/index.css'
 import '@/assets/scss/reset.scss'
 
 // 重置饿了么样式
-import 'element-plus/dist/index.css'
 import '@/assets/scss/reset-element-plus-ui.scss'
 
 const app = createApp(App)

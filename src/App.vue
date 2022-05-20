@@ -1,22 +1,28 @@
 <template>
-  <keep-alive>
+  <ElConfigProvider :locale="locale">
+    <keep-alive>
+      <router-view
+        class="app-content-box"
+        v-if="$route.meta.keepAlive && isRouterAlive"
+      ></router-view>
+    </keep-alive>
     <router-view
       class="app-content-box"
-      v-if="$route.meta.keepAlive && isRouterAlive"
+      v-if="!$route.meta.keepAlive && isRouterAlive"
     ></router-view>
-  </keep-alive>
-  <router-view
-    class="app-content-box"
-    v-if="!$route.meta.keepAlive && isRouterAlive"
-  ></router-view>
+  </ElConfigProvider>
 </template>
 
 <script lang="ts" setup>
 import { ref, provide, nextTick } from 'vue';
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+
 
 defineOptions({
-  name:'App',
+  name: 'App',
 })
+
+const locale = zhCn // 饿了么国际化，设置为中文
 
 const isRouterAlive = ref(true);
 provide('reload', reload);

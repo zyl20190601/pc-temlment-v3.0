@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <img
+    <!-- <img
       alt="Vue logo"
       :src="getImgSrc('logo.png')"
-    />
+    /> -->
     <CityLinkage />
   </div>
 </template>
