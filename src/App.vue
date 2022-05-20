@@ -17,7 +17,6 @@
 import { ref, provide, nextTick } from 'vue';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
-
 defineOptions({
   name: 'App',
 })
