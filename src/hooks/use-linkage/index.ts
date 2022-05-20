@@ -87,6 +87,7 @@ const createOptionVNodes = (arr: ObjectType[]) => {
 const attrs = {
   filterable: true,
   clearable: true,
+  placeholder: '请选择'
 }
 
 export const useLinkage = (): ObjectType => {
