@@ -50,7 +50,7 @@ export default instance;
  */
 export function request({ url, method, data = {}, params = {}, headers }: ObjectType): any {
   return new Promise((resolve, reject) => {
-    axios({
+    instance({
       method: method || 'POST',
       url: url,
       params: method === 'GET' ? params : '',
