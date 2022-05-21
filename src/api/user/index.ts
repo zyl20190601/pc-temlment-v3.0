@@ -1,5 +1,5 @@
 import { prefix } from '@/config'
-import { request } from '@/server/axios'
+import { request } from '@/server/request'
 
 import { IaddIntentionParams, TaddIntentionRes } from './user'
 
