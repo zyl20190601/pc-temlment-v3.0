@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from 'axios'
 
-export declare namespace ApiRequest {
+export declare namespace Request {
   /** ALL请求参数 */
   interface All {
     url: string

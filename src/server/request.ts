@@ -1,6 +1,6 @@
 import instance from './guard';
 import type { AxiosError } from 'axios'
-import { ApiRequest } from '@/typings/server';
+import { Request } from '@/typings/server';
 
 /**
  * 封装所有请求
@@ -10,7 +10,7 @@ import { ApiRequest } from '@/typings/server';
  * @param headers
  * @returns {Promise}
  */
-export function request({ url, method, data, params, headers, config }: ApiRequest.Params | ApiRequest.Data): any {
+export function request({ url, method, data, params, headers, config }: Request.Params | Request.Data): any {
   return new Promise((resolve, reject) => {
     instance({
       method,
