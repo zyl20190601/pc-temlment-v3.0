@@ -1,14 +1,6 @@
 import instance from './guard';
-import type { AxiosError, AxiosRequestConfig } from 'axios'
-
-interface RequestParam {
-  url: string
-  method: 'POST' | 'GET'
-  data?: ObjectType
-  params?: ObjectType
-  headers?: any
-  config?: AxiosRequestConfig
-}
+import type { AxiosError } from 'axios'
+import { ApiRequest } from '@/typings/server';
 
 /**
  * 封装所有请求
@@ -18,13 +10,13 @@ interface RequestParam {
  * @param headers
  * @returns {Promise}
  */
-export function request({ url, method, data = {}, params = {}, headers, config }: RequestParam): any {
+export function request({ url, method, data, params, headers, config }: ApiRequest.Params | ApiRequest.Data): any {
   return new Promise((resolve, reject) => {
     instance({
       method,
       url,
-      params: method === 'GET' ? params : '',
-      data: method !== 'GET' ? data : '',
+      params,
+      data,
       headers,
       ...config
     })

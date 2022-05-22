@@ -14,5 +14,7 @@ export const addIntentionApi = (data: IaddIntentionParams): TaddIntentionRes => 
 export const getListApi = (params: IaddIntentionParams): TaddIntentionRes => request({
   url: `${prefix}/security/commissionScheme/queryPage`,
   method: 'GET',
-  params
+  params,
 })
+
+
