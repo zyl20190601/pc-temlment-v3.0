@@ -4,7 +4,6 @@
 const { isDev, notDev, isPro } = require('./src/config/env.ts');
 const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
