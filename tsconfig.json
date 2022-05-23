@@ -31,7 +31,7 @@
       ],
       "_img/*": [
         "src/utils/*"
-      ],
+      ]
     },
     "lib": [
       "esnext",
@@ -46,7 +46,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "typings/*"
+    "src/typings/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"
